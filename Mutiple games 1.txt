@@ -1,0 +1,145 @@
+import random
+import string
+gamerun = True
+
+while gamerun == True:
+    Print ("HangMan, DieRoller, FortuneTeller, Calculator")
+    game = raw_input("Choose your game")
+    if game == HangMan:
+            def randomString(stringLength=5):
+                letters = string.ascii_lowercase
+                return '' .join(random.choice(letters) for i in range(stringLength))
+
+            #welcoming the user
+            name = raw_input("What is your name? ")
+            print "Hello, " + name, "Time to play hangman!"
+            print ""
+            word = randomString()
+            guesses = ''
+            turns = 20
+            # Create a while loop
+            while turns > 0:         
+                failed = 0             
+                for char in word:      
+                    if char in guesses:    
+                        print char,
+                    else:
+                        print ("_"),     
+                    failed += 1    
+                if failed == 0:        
+                    print ("You won")  
+
+                guess = raw_input("    guess a character:") 
+                guesses += guess                    
+                if guess not in word:  
+                    turns -= 1        
+                    print ("Wrong")
+ 
+            print "You have ", + turns, "more guesses"
+ 
+            if turns == 0:           
+                print "You Lose"
+                print "The String Was: " + str(word)
+        elif game == DieRoller:
+            print("What die do you want to roll?")
+            print("d100")
+            print("d20")
+            print("d12")
+            print("d10")
+            print("d8")
+            print("d6")
+            print("d4")
+
+            choice = input("Choose You Die!") 
+
+
+            if choice == "d20":
+                roll20 = random.randint(1,20)
+                print("You Rolled a " + (str(roll20)))
+            elif choice == "d12":
+                roll12 = random.randint(1,12)
+                print("You Rolled a " + (str(roll12)))
+            elif choice == "d10":
+                roll10 = random.randint(1,10)
+                print("You Rolled a " + (str(roll10)))
+            elif choice == "d100":
+                roll100 = random.randint(1,100)
+                print("You Rolled a " + (str(roll100)))
+            elif choice == "d8":
+                roll8 = random.randint(1,8)
+                print("You Rolled a " + (str(roll8)))
+            elif choice == "d6":
+                roll6 = random.randint(1,6)
+                print("You Rolled a " + (str(roll6)))
+            elif choice == "d4":
+                roll4 = random.randint(1,4)
+                print("You Rolled a " + (str(roll4)))
+            else:
+                print("Die does not exist")
+        elif raw_input == Calculator:
+            # Program make a simple calculator
+
+            # This function adds two numbers 
+            def add(x, y):
+                return x + y
+
+            # This function subtracts two numbers 
+            def subtract(x, y):
+                return x - y
+
+            # This function multiplies two numbers
+            def multiply(x, y):
+                return x * y
+
+            # This function divides two numbers
+            def divide(x, y):
+                return x / y
+
+                print("Select operation.")
+                print("Add")
+                print("Subtract")
+                print("Multiply")
+                print("Divide")
+
+                # Take input from the user 
+                choice = input("Enter choice")
+
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+
+                if choice == 'Add':
+                    print(add(num1,num2))
+
+                    elif choice == 'Subtract':
+                        print(subtract(num1,num2))
+
+                    elif choice == 'Multiply':
+                        print(multiply(num1,num2))
+
+                    elif choice == 'Divide':
+                        print(divide(num1,num2))
+                    else:
+                        print("Invalid input")
+        elif game == FortuneTeller:
+                question = raw_input("Ask the fortune teller a Yes or No question")
+
+                answers = random.randint(1,4)
+
+
+            if answers == 1:
+                print "It is certain"
+
+
+                elif answers == 2:
+                    print "Ask me again later"
+
+                elif answers == 3:
+                    print "Maybe"
+
+                elif answers == 4:
+                    print "My sources say no"
+
+
+
+
+
